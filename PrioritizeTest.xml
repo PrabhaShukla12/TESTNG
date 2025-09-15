@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="BookFlightTicket">
+		<classes>
+			<class name="testNG.DisableTestNG">
+				<methods>
+					<include name="SignUp" />
+					<include name="LogIn" />
+					<include name="SearchFlight" />
+					<include name="BookTickets" />
+					<include name="MakePayment" />
+					<include name="DownloadTicket" />
+					<include name="LogOut" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="SearchFlights">
+		<classes>
+			<class name="testNG.DisableTestNG">
+				<methods>
+					<include name="LogIn" />
+					<include name="SearchFlight" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="DownloadTickets">
+		<classes>
+			<class name="testNG.DisableTestNG">
+				<methods>
+					<include name="LogIn" />
+					<include name="SearchFlight" />
+					<include name="DownloadTicket" />
+					<include name="LogOut" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> 
