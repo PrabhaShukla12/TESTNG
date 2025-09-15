@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<groups>
+		<define name="weeklybuild">
+			<include name="smoke" />
+			<include name="sanity" />
+		</define>
+		<define name="dailybuild">
+			<include name="smoke" />
+			<include name="sanity" />
+			<include name="regression" />
+			<include name="functional" />
+		</define>
+		<run>
+			<include name="smoke" /> <!-- This will run at the suite level-->
+		</run>
+	</groups>
+	<test name="Test1">
+		<groups>
+			<run>
+				<include name="sanity" /> <!-- This (sanity group) will run
+				within the test level-->
+			</run>
+		</groups>
+		<classes>
+			<class name="testNG.TestClass1" />
+		</classes>
+	</test>
+	<test name="Test2">
+		<groups>
+			<run>
+				<include name="funtional" /> <!-- This (functional group) will run within the test level-->
+			</run>
+		</groups>
+		<classes>
+			<class name="testNG.TestClass2" />
+		</classes>
+	</test>
+</suite>
