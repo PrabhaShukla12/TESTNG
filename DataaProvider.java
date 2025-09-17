@@ -4,13 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class DataaProvider {
 
-	@Test(dataProvider = "logindata")
+	@Test(dataProvider = "dp", dataProviderClass= ExcelDataSupplier_DP.class)
 	public void login(String username, String password) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\HP\\Downloads\\chromedriver-win64 (2)\\chromedriver-win64\\chromedriver.exe");
@@ -28,9 +27,8 @@ public class DataaProvider {
 		WebElement ele = d.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[1]/a/div[2]/img"));
 		if (ele.isDisplayed())
 			System.out.println("Logged In Successfully");
-		{
-			d.quit();
-		}
+		d.quit();
+
 	}
 
 	@DataProvider(name = "logindata")
