@@ -1,32 +1,30 @@
-package testNG;
+package testNG12;
 
 import org.testng.annotations.Test;
 
-@Test (groups= {"all"})
 public class TestClass2 {
-
-	@Test (groups= {"smoke", "window.smoke"})
-	public void Test5() {
-		System.out.println("Test Case 5");
+	
+	@Test
+	public void TestMethod5()
+	{
+		System.out.println("TestClass2 >> Test Method5 >> "+ Thread.currentThread().getId());
 	}
 	
-	@Test (groups= {"sanity", "smoke"})
-	public void Test6() {
-		System.out.println("Test Case 6");
+	@Test
+	public void TestMethod6()
+	{
+		System.out.println("TestClass2 >> Test Method6 >> "+ Thread.currentThread().getId());
 	}
 	
-	@Test (groups= {"regression", "window.functional"})
-	public void Test7() {
-		System.out.println("Test Case 7");
+	@Test
+	public void TestMethod7()
+	{
+		System.out.println("TestClass2 >> Test Method7 >> "+ Thread.currentThread().getId());
 	}
 	
-	@Test (groups= {"functional", "ios.functional"})
-	public void Test8() {
-		System.out.println("Test Case 8");
-	}
-	
-	@Test (groups = {"window.sanity"})
-	public void Test9() {
-		System.out.println("Test Case 9");
+	@Test
+	public void TestMethod8()
+	{
+		System.out.println("TestClass2 >> Test Method8 >> "+ Thread.currentThread().getId());
 	}
 }
